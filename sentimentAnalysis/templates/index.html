@@ -1,0 +1,55 @@
+{% load staticfiles%}
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet"/>
+
+    <!-- Bootstrap Dropdown Hover CSS -->
+    <link href= "{% static "css/animate.min.css" %}" rel="stylesheet">
+    <link href="{% static "css/bootstrap-dropdownhover.min.css"%}" rel="stylesheet">
+    <style>
+    
+    body {
+        background-color: black;
+    }
+
+    .dropdown{
+      margin-top:  20%;
+      margin-left:  40%;
+    
+    }
+
+</style>
+
+  </head>
+  <body>
+   
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+    <script src="{% static "js/bootstrap.min.js" %}"></script>
+
+    <!-- Bootstrap Dropdown Hover JS -->
+    <script src="{% static "js/bootstrap-dropdownhover.min.js" %}"></script>
+
+    <div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" data-hover="dropdown">
+   search by <span class="caret"></span>
+  </button>
+  
+  <ul class="dropdown-menu">
+   
+    <li><a href="/twitter/searchbycountry">Country</a></li>
+   
+    <li><a href="/twitter/searchbytweet">Tweet</a></li>
+   
+    <li><a href="/twitter/searchbyuser">User</a></li>
+  </ul>
+</div>
+  </body>
+</html>
