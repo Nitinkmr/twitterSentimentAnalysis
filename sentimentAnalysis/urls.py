@@ -10,13 +10,15 @@ urlpatterns = [
     url(r'^$', views.firstForm),
     url(r'^tweet/$', views.getTweetByTweetName),
     
-    #url(r'^displayFlights?$', views.displayFlights),
-  # 	url(r'^searchbycountry/$', views.searchByCountry),
-   #	url(r'^country/(?P<country>[0-9]{4})/$', views.searchByCountry),
+    url(r'^searchbycountry/$', views.searchByCountry),
+   	url(r'^country/(?P<country>[0-9]{4})/$', views.searchByCountry),
    
 
     url(r'^searchbytweet/$', views.searchByTweet),
     
+    url(r'^visualisations/$', views.visualisations),
+    
+
     url(r'^admin/', admin.site.urls),
        
 ]

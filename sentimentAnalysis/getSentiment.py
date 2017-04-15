@@ -61,7 +61,7 @@ class TwitterClient(object):
         try:
             # call twitter api to fetch tweets
             fetched_tweets = self.api.search(q = query, count = count)
- 
+            print fetched_tweets
             # parsing tweets one by one
             for tweet in fetched_tweets:
                 # empty dictionary to store required params of a tweet
@@ -71,7 +71,10 @@ class TwitterClient(object):
                 parsed_tweet['text'] = tweet.text
                 # saving sentiment of tweet
                 parsed_tweet['sentiment'] = self.get_tweet_sentiment(tweet.text)
- 
+               
+                parsed_tweet['retweetCount'] =  tweet.retweet_count
+
+                parsed_tweet['url'] = "https://twitter.com/statuses/" + tweet.id_str
                 # appending parsed tweet to tweets list
                 if tweet.retweet_count > 0:
                     # if tweet has retweets, ensure that it is appended only once
@@ -89,32 +92,14 @@ class TwitterClient(object):
  
 def getTweets(searchBy):
     # creating object of TwitterClient Class
+   
     api = TwitterClient()
     # calling function to get tweets
-    tweets = api.get_tweets(query = searchBy, count = 200)
- 
-    print tweets
-    # picking positive tweets from tweets
-    ptweets = [tweet for tweet in tweets if tweet['sentiment'] == 'positive']
-    # percentage of positive tweets
-    print("Positive tweets percentage: {} %".format(100*len(ptweets)/len(tweets)))
-    # picking negative tweets from tweets
-    ntweets = [tweet for tweet in tweets if tweet['sentiment'] == 'negative']
-    # percentage of negative tweets
-    print("Negative tweets percentage: {} %".format(100*len(ntweets)/len(tweets)))
-    # percentage of neutral tweets
-    print("Neutral tweets percentage: {} % ".format(100*(len(tweets) - len(ntweets) - len(ptweets))/len(tweets)))
- 
-    # printing first 5 positive tweets
-    print("\n\nPositive tweets:")
-    for tweet in ptweets[:10]:
-        print(tweet['text'])
- 
-    # printing first 5 negative tweets
-    print("\n\nNegative tweets:")
-    for tweet in ntweets[:10]:
-        print(tweet['text'])
- 
+    tweets = api.get_tweets(query = searchBy, count = 100)
+   # print tweets
+    return tweets
+    
+   
 if __name__ == "__main__":
     # calling main function
     main()
