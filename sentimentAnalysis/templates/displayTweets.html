@@ -26,8 +26,9 @@ table{
 .tbl-header{
   background-color: rgba(255,255,255,0.3);
  }
+
 .tbl-content{
-  height:300px;
+  height:100%;
   overflow-x:auto;
   margin-top: 0px;
   border: 1px solid rgba(255,255,255,0.3);
@@ -64,30 +65,6 @@ section{
 }
 
 
-/* follow me template */
-.made-with-love {
-  margin-top: 40px;
-  padding: 10px;
-  clear: left;
-  text-align: center;
-  font-size: 10px;
-  font-family: arial;
-  color: #fff;
-}
-.made-with-love i {
-  font-style: normal;
-  color: #F50057;
-  font-size: 14px;
-  position: relative;
-  top: 2px;
-}
-.made-with-love a {
-  color: #fff;
-  text-decoration: none;
-}
-.made-with-love a:hover {
-  text-decoration: underline;
-}
 
 
 /* for custom scrollbar for webkit browser*/
@@ -129,7 +106,7 @@ section{
         <tr>
           <td>{{tweet.text}}</td>
           <td>{{tweet.sentiment}}</td>
-          <td><a href="{{tweet.url}}">{{tweet.url}}</a></td>
+          <td><a href="{{tweet.url}}">Twitter url</a></td>
           <td>{{tweet.retweetCount}}</td>
           <td>1 million</td>
         </tr>
@@ -141,7 +118,7 @@ section{
         <tr>
           <td>{{tweet.text}}</td>
           <td>{{tweet.sentiment}}</td>
-          <td><a href="{{tweet.url}}">{{tweet.url}}</a></td>
+          <td><a href="{{tweet.url}}">Twitter url</a></td>
           <td>{{tweet.retweetCount}}</td>
           <td>1 million</td>
         </tr>
@@ -152,7 +129,7 @@ section{
         <tr>
           <td>{{tweet.text}}</td>
           <td>{{tweet.sentiment}}</td>
-          <td><a href="{{tweet.url}}">{{tweet.url}}</a></td>      
+          <td><a href="{{tweet.url}}">Twitter url</a></td>      
           <td>{{tweet.retweetCount}}</td>
           <td>1 million</td>
         </tr>
@@ -163,9 +140,6 @@ section{
 </section>
 
 
-{% if pPercent%}
-<p> Positive Tweets percent : {{pPercent}}</p>
-{%endif%}
 
 <a href="/twitter/visualisations">Visualisations</a>
 </body>

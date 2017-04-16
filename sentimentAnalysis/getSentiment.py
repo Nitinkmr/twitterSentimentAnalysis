@@ -61,7 +61,7 @@ class TwitterClient(object):
         try:
             # call twitter api to fetch tweets
             fetched_tweets = self.api.search(q = query, count = count)
-            print fetched_tweets
+           
             # parsing tweets one by one
             for tweet in fetched_tweets:
                 # empty dictionary to store required params of a tweet

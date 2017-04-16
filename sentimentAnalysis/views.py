@@ -3,12 +3,13 @@ from .getSentiment import getTweets
 # Create your views here.
 
 global percentage
-
+global result
 
 def analyseTweets(tweets):
 	 # picking positive tweets from tweets
     
     ptweets = [tweet for tweet in tweets if tweet['sentiment'] == 'positive']
+    print ptweets
     # percentage of positive tweets
    # print("Positive tweets percentage: {} %".format(100*len(ptweets)/len(tweets)))
     # picking negative tweets from tweets
@@ -17,6 +18,7 @@ def analyseTweets(tweets):
     
     neutralTweets = [tweet for tweet in tweets if tweet['sentiment'] == 'neutral']
 
+    global result
     result = {
  				'pTweets' : ptweets,
  				'nTweets' :ntweets,
@@ -57,10 +59,11 @@ def searchByUser(request):
 def getTweetByTweetName(request):
 	tweet = request.GET.get('tweet')
 	tweets = getTweets(tweet)
+	
+	global result
+	result = []
 	result = analyseTweets(tweets)
-
-	#print result['neutralTweets']
-	#print result['pTweets']
+	
 	global percentage
 	percentage = {}
 	percentage	={
@@ -74,5 +77,22 @@ def getTweetByTweetName(request):
 
 def visualisations(request):
 
+	global percentage	
+	global result
+
+	print result
+
+	result['pTweets'] = sorted(result['pTweets'], key=lambda tweet: int(tweet['retweetCount'])	,reverse=True)
+	result['nTweets'] = sorted(result['nTweets'], key=lambda tweet: tweet['retweetCount'],reverse=True)
 	
-	return render(request, 'visualisations.html', {'percentage':percentage})
+	pTweets = []
+	nTweets = []
+	for x in range(0,5):
+		print result['pTweets'][x]
+		pTweets.append(result['pTweets'][x])
+		nTweets.append(result['nTweets'][x])
+
+	print result['pTweets']
+	return render(request, 'visualisations.html', {'percentage':percentage,'influentialPTweets':pTweets,'influentialNTweets':nTweets})
+
+
