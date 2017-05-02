@@ -31,13 +31,16 @@ def analyseTweets(tweets):
     neutralTweets = [tweet for tweet in tweets if tweet['sentiment'] == 'neutral']
 
     global result
+    a = 100*len(ptweets)/len(tweets)
+    b = 100*len(ntweets)/len(tweets)
+    c = 100 - a - b
     result = {
  				'pTweets' : ptweets,
  				'nTweets' :ntweets,
  				'neutralTweets' : neutralTweets,
- 				'pPercent' : 100*len(ptweets)/len(tweets),
- 				'nPercent' :100*len(ntweets)/len(tweets),
- 				'neutraltPercent':100*(len(tweets) - len(ntweets) - len(ptweets))/len(tweets)
+ 				'pPercent' : a,
+ 				'nPercent' :b,
+ 				'neutraltPercent':c
  			}
 
     #print("Negative tweets percentage: {} %".format(100*len(ntweets)/len(tweets)))
