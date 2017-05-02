@@ -2,7 +2,8 @@ import re
 import tweepy
 from tweepy import OAuthHandler
 from textblob import TextBlob
- 
+from TwitterSearch import *
+
 class TwitterClient(object):
     '''
     Generic Twitter Class for sentiment analysis.
@@ -61,10 +62,13 @@ class TwitterClient(object):
         try:
             # call twitter api to fetch tweets
             fetched_tweets = self.api.search(q = query, count = count)
-           
+            
+
             # parsing tweets one by one
             for tweet in fetched_tweets:
                 # empty dictionary to store required params of a tweet
+                print tweet
+                print "\n\n"
                 parsed_tweet = {}
  
                 # saving text of tweet
@@ -75,6 +79,11 @@ class TwitterClient(object):
                 parsed_tweet['retweetCount'] =  tweet.retweet_count
 
                 parsed_tweet['url'] = "https://twitter.com/statuses/" + tweet.id_str
+                
+                #parsed_tweet['profilePic'] = tweet.retweeted_status.user.profile_image_url_https
+
+                #parsed_tweet['userName'] = tweet.retweeted_status.user.name
+
                 # appending parsed tweet to tweets list
                 if tweet.retweet_count > 0:
                     # if tweet has retweets, ensure that it is appended only once
@@ -92,7 +101,11 @@ class TwitterClient(object):
  
 def getTweets(searchBy):
     # creating object of TwitterClient Class
-   
+
+#    https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=twitterapi&count=2
+
+    
+       
     api = TwitterClient()
     # calling function to get tweets
     tweets = api.get_tweets(query = searchBy, count = 100)

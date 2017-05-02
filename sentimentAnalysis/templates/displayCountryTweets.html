@@ -100,7 +100,7 @@ section{
     <table cellpadding="0" cellspacing="0" border="0">
       <tbody>
         
-      {% for tweet in pTweets %}
+      {% for tweet in tweets %}
 
         <tr>
           <td>{{tweet.text}}</td>
@@ -113,27 +113,6 @@ section{
        {%endfor%} 
       </tbody>
     
-       {% for tweet in nTweets %}
-
-        <tr>
-          <td>{{tweet.text}}</td>
-          <td>{{tweet.sentiment}}</td>
-          <td><a href="{{tweet.url}}">Twitter url</a></td>
-          <td>{{tweet.retweetCount}}</td>
-          
-        </tr>
-       {%endfor%} 
-      
-      {% for tweet in neutralTweets %}
-
-        <tr>
-          <td>{{tweet.text}}</td>
-          <td>{{tweet.sentiment}}</td>
-          <td><a href="{{tweet.url}}">Twitter url</a></td>      
-          <td>{{tweet.retweetCount}}</td>
-          
-        </tr>
-       {%endfor%} 
      
     </table>
   </div>
