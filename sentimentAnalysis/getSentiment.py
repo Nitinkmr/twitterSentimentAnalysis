@@ -62,13 +62,17 @@ class TwitterClient(object):
         try:
             # call twitter api to fetch tweets
             fetched_tweets = self.api.search(q = query, count = count)
-            
+            stuff = self.api.user_timeline(screen_name = 'danieltosh', count = 100, include_rts = True)
+            for x in stuff:
+                print "stuff\n\n\n"
+                print x
+
+           # print self.api.statuses.user_timeline(screen_name="billybob")
 
             # parsing tweets one by one
             for tweet in fetched_tweets:
                 # empty dictionary to store required params of a tweet
-                print tweet
-                print "\n\n"
+               
                 parsed_tweet = {}
  
                 # saving text of tweet

@@ -19,7 +19,7 @@ t = Twitter(
                'xUO1RzRoIqQBP5pMhiscLBDyRH9cLEUtw8WtgZ9RvFI721MR8I'))
 
 def analyseTweets(tweets):
-	 # picking positive tweets from tweets
+     # picking positive tweets from tweets
     
     ptweets = [tweet for tweet in tweets if tweet['sentiment'] == 'positive']
     # percentage of positive tweets
@@ -35,65 +35,85 @@ def analyseTweets(tweets):
     b = 100*len(ntweets)/len(tweets)
     c = 100 - a - b
     result = {
- 				'pTweets' : ptweets,
- 				'nTweets' :ntweets,
- 				'neutralTweets' : neutralTweets,
- 				'pPercent' : a,
- 				'nPercent' :b,
- 				'neutraltPercent':c
- 			}
+                'pTweets' : ptweets,
+                'nTweets' :ntweets,
+                'neutralTweets' : neutralTweets,
+                'pPercent' : a,
+                'nPercent' :b,
+                'neutraltPercent':c
+            }
 
     #print("Negative tweets percentage: {} %".format(100*len(ntweets)/len(tweets)))
     # percentage of neutral tweets
    # print("Neutral tweets percentage: {} % ".format(100*(len(tweets) - len(ntweets) - len(ptweets))/len(tweets)))
 
     return result
-	
+    
     
 def firstForm(request):
 
-	return render(request, 'index.html', {})
+    return render(request, 'index.html', {})
 
 
 def searchByCountry(request):
 
-	return render(request, 'index.html', {})
+    return render(request, 'index.html', {})
 
 
 def searchByTweet(request):
 
-	#if request.method == "GET":	 
+    #if request.method == "GET":     
 
-	return render(request, 'searchBy.html', {'searchBy':'tweet'})
+    return render(request, 'searchBy.html', {'searchBy':'tweet'})
 
 
 def searchByUserName(request):
 
-	return render(request, 'searchBy.html', {'searchBy':'userName'})
+    return render(request, 'searchBy.html', {'searchBy':'userName'})
 
 def getTweetByUserName(request):
-	userName = request.GET.get('userName')
-	print userName
-	return render(request, 'searchBy.html', {'searchBy':'userName'})
+    userName = request.GET.get('userName')
+    print userName
+
+    import tweepy
+
+    ckey = 'UtvgXDJeHGZoL8naPRBVQJBTU'
+    csecret = 'xUO1RzRoIqQBP5pMhiscLBDyRH9cLEUtw8WtgZ9RvFI721MR8I'
+    atoken = '2955186811-3knD17GyGB21G1obeECLiMA5NsJTNU1tkeBG94J'
+    asecret = '7Ba84Alidfz9nAZWcb33EFW2DmeCyxr9SJoXvVYyEkzDx'
+
+
+
+    auth = tweepy.OAuthHandler(ckey, csecret)
+    auth.set_access_token(atoken, asecret)
+
+    api = tweepy.API(auth)
+
+    stuff = api.user_timeline(screen_name = userName, count = 100, include_rts = True)
+
+    print stuff
+        
+    return render(request, 'searchBy.html', {'searchBy':'userName'})
 
 
 def getTweetByTweetName(request):
-	tweet = request.GET.get('tweet')
-	tweets = getTweets(tweet)
-	
-	global result
-	result = []
-	result = analyseTweets(tweets)
-	
-	global percentage
-	percentage = {}
-	percentage	={
-					'pPercent':result['pPercent'],
-					'nPercent':result['nPercent'],
-					'neutraltPercent':result['neutraltPercent']
-				 }
-	return render(request, 'displayTweets.html', {'pTweets':result['pTweets'],'nTweets':result['nTweets'],'neutralTweets':result['neutralTweets'],
-				'pPercent':result['pPercent'],'nPercent':result['nPercent'],'neutraltPercent':result['neutraltPercent']		})
+    tweet = request.GET.get('tweet')
+    tweets = getTweets(tweet)
+    
+    global result
+    result = []
+    result = analyseTweets(tweets)
+    
+    global percentage
+    percentage = {}
+    percentage  ={
+                    'pPercent':result['pPercent'],
+                    'nPercent':result['nPercent'],
+                    'neutraltPercent':result['neutraltPercent']
+                 }
+    
+    return render(request, 'displayTweets.html', {'pTweets':result['pTweets'],'nTweets':result['nTweets'],'neutralTweets':result['neutralTweets'],
+                'pPercent':result['pPercent'],'nPercent':result['nPercent'],'neutraltPercent':result['neutraltPercent']     })
 
 
 def countryVisual(request):
@@ -106,7 +126,7 @@ def countryVisual(request):
     pTweets = []
     nTweets = []
     for x in range(0,5):
-        print result['pTweets'][x]
+        
         try:
             pTweets.append(countryResult['pTweets'][x])
             nTweets.append(countryResult['nTweets'][x])
@@ -117,10 +137,10 @@ def countryVisual(request):
 
 def visualisations(request):
 
-    global percentage	
+    global percentage   
     global result
 
-    print result
+    
 
     result['pTweets'] = sorted(result['pTweets'], key=lambda tweet: int(tweet['retweetCount'])  ,reverse=True)
     result['nTweets'] = sorted(result['nTweets'], key=lambda tweet: tweet['retweetCount'],reverse=True)
@@ -129,7 +149,7 @@ def visualisations(request):
     nTweets = []
     for x in range(0,5):
         try:
-            print result['pTweets'][x]
+            
             
             pTweets.append(result['pTweets'][x])
             nTweets.append(result['nTweets'][x])
@@ -198,7 +218,7 @@ def country_dropDown(request):
                          }
             print "\n\n\n\n"
 
-            print percentage
+           
             print "\n\n\n\n"
         else:
             print "error in country selection"
@@ -209,10 +229,9 @@ def country_dropDown(request):
     else:
         form = NameForm()  
         print "get"    
-    	return render(request, 'selectCountry.html', {'form':form})
+        return render(request, 'selectCountry.html', {'form':form})
 
 
     
     
 
-    
