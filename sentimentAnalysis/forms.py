@@ -11,5 +11,11 @@ class SelectFlight(forms.Form):
 class NameForm(forms.Form):
 
 	country_list = get_countries()
-	countries_drop_down = forms.ChoiceField(choices = [(country['name'],country['name']) for country in country_list])
+	coun = []
+	for cc in country_list:
+		coun.append((cc['name'],cc['name']))
+	coun.sort(key=lambda tup: tup[0])
+	print coun
+	# countries_drop_down = forms.ChoiceField(choices = [(country['name'],country['name']) for country in country_list])
+	locations = forms.ChoiceField(choices = [(country[0],country[1]) for country in coun])
 	#trending_issues = []

@@ -1,20 +1,30 @@
+{% load staticfiles%}
+{% load bootstrap %}
 <!DOCTYPE html>
 <html>
 <head>
-	<title>sentiment analysis</title>
+	<title>Search By Country</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  	body {
+  		background-image: url("{% static "img3.png" %}");
+  	}
+  </style>
 </head>
 
 <body>
-
-<div class="dropdown">
-<form action="" method="post">
-    {% csrf_token %}
-    {{ form }}
-    <button type="submit" class="btn btn-default" value="Submit">Submit</button>
-</form>
+<br><br><br><br><br>
+<div class="container">
+	<div class="dropdown">
+		<form action="" method="post">
+		    {% csrf_token %}
+		    {{ form|bootstrap }}
+		    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+		    <button type="submit" class="btn btn-default" value="Submit">Submit</button>
+		</form>
+	</div>
 </div>
 
 </body>

@@ -11,16 +11,43 @@
     <!-- Bootstrap Dropdown Hover CSS -->
     <link href= "{% static "css/animate.min.css" %}" rel="stylesheet">
     <link href="{% static "css/bootstrap-dropdownhover.min.css"%}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
     <style>
     
     body {
         background-color: black;
+        background-image: url("../static/python.jpg");
+        height: 100;
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 
     .dropdown{
-      margin-top:  20%;
+      margin-top:  10%;
       margin-left:  40%;
     
+    }
+
+    h1 {
+      font-family: "Roboto Mono";
+      font-size: 50px;
+      padding-top: 100px;  
+      text-align: center;
+      text-transform: uppercase;
+      text-rendering: optimizeLegibility;
+    }
+    h1.deepshadow {
+      color: #e0dfdc;
+      letter-spacing: .1em;
+      text-shadow: 0 -1px 0 #fff, 0 1px 0 #2e2e2e, 0 2px 0 #2c2c2c, 0 3px 0 #2a2a2a, 0 4px 0 #282828, 0 5px 0 #262626, 0 6px 0 #242424, 0 7px 0 #222, 0 8px 0 #202020, 0 9px 0 #1e1e1e, 0 10px 0 #1c1c1c, 0 11px 0 #1a1a1a, 0 12px 0 #181818, 0 13px 0 #161616, 0 14px 0 #141414, 0 15px 0 #121212, 0 22px 30px rgba(0, 0, 0, 0.9);
+    }
+
+    h2{
+      color: white;
+      padding-top: 20px;
+      text-align: center;
+      font-size: 40px;
     }
 
 </style>
@@ -37,14 +64,16 @@
     <!-- Bootstrap Dropdown Hover JS -->
     <script src="{% static "js/bootstrap-dropdownhover.min.js" %}"></script>
 
-    <div class="dropdown">
-  <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" data-hover="dropdown">
+    <h2 class="deepshadow">Twitter Insights</h2>
+
+    <div class="dropdown" style="text-align: left;">
+  &emsp;&emsp;&emsp;&emsp;&emsp;<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" data-hover="dropdown">
    search by <span class="caret"></span>
   </button>
   
   <ul class="dropdown-menu">
    
-    <li><a href="/twitter/searchbycountry">Country</a></li>
+    <li><a href="/twitter/searchbycountry">Location</a></li>
    
     <li><a href="/twitter/searchbytweet">Tweet</a></li>
    

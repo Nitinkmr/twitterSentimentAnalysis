@@ -864,18 +864,6 @@ country_list = [
 "parentid": 23424977
 },
 {
-"name": "Novosibirsk",
-"woeid": 2122541,
-"placeType": {
-"name": "Town",
-"code": 7
-},
-"country": "Russia",
-"url": "http://where.yahooapis.com/v1/place/2122541",
-"countryCode": "RU",
-"parentid": 23424936
-},
-{
 "name": "Las Vegas",
 "placeType": {
 "name": "Town",
@@ -982,30 +970,6 @@ country_list = [
 "url": "http://where.yahooapis.com/v1/place/906057",
 "countryCode": "SE",
 "parentid": 23424954
-},
-{
-"name": "Bogota",
-"woeid": 368148,
-"placeType": {
-"name": "Town",
-"code": 7
-},
-"country": "Colombia",
-"url": "http://where.yahooapis.com/v1/place/368148",
-"countryCode": "CO",
-"parentid": 23424787
-},
-{
-"name": "Baton Rouge",
-"placeType": {
-"name": "Town",
-"code": 7
-},
-"woeid": 2359991,
-"country": "United States",
-"url": "http://where.yahooapis.com/v1/place/2359991",
-"countryCode": "US",
-"parentid": 23424977
 },
 {
 "name": "Montreal",
@@ -1200,18 +1164,6 @@ country_list = [
 "parentid": 1
 },
 {
-"name": "Takamatsu",
-"woeid": 1118285,
-"placeType": {
-"name": "Town",
-"code": 7
-},
-"country": "Japan",
-"url": "http://where.yahooapis.com/v1/place/1118285",
-"countryCode": "JP",
-"parentid": 23424856
-},
-{
 "name": "Izmir",
 "placeType": {
 "name": "Town",
@@ -1258,18 +1210,6 @@ country_list = [
 "url": "http://where.yahooapis.com/v1/place/656958",
 "countryCode": "DE",
 "parentid": 23424829
-},
-{
-"name": "Tallahassee",
-"placeType": {
-"name": "Town",
-"code": 7
-},
-"woeid": 2503713,
-"country": "United States",
-"url": "http://where.yahooapis.com/v1/place/2503713",
-"countryCode": "US",
-"parentid": 23424977
 },
 {
 "name": "Greensboro",
@@ -1320,18 +1260,6 @@ country_list = [
 "parentid": 23424977
 },
 {
-"name": "Milwaukee",
-"woeid": 2451822,
-"placeType": {
-"name": "Town",
-"code": 7
-},
-"country": "United States",
-"url": "http://where.yahooapis.com/v1/place/2451822",
-"countryCode": "US",
-"parentid": 23424977
-},
-{
 "name": "Mumbai",
 "woeid": 2295411,
 "placeType": {
@@ -1342,18 +1270,6 @@ country_list = [
 "url": "http://where.yahooapis.com/v1/place/2295411",
 "countryCode": "IN",
 "parentid": 23424848
-},
-{
-"name": "Den Haag",
-"woeid": 726874,
-"placeType": {
-"name": "Town",
-"code": 7
-},
-"country": "Netherlands",
-"url": "http://where.yahooapis.com/v1/place/726874",
-"countryCode": "NL",
-"parentid": 23424909
 },
 {
 "name": "Vancouver",
@@ -1390,18 +1306,6 @@ country_list = [
 "url": "http://where.yahooapis.com/v1/place/455826",
 "countryCode": "BR",
 "parentid": 23424768
-},
-{
-"name": "Lima",
-"woeid": 418440,
-"placeType": {
-"name": "Town",
-"code": 7
-},
-"country": "Peru",
-"url": "http://where.yahooapis.com/v1/place/418440",
-"countryCode": "PE",
-"parentid": 23424919
 },
 {
 "name": "Mexico",
@@ -1450,18 +1354,6 @@ country_list = [
 "url": "http://where.yahooapis.com/v1/place/455827",
 "countryCode": "BR",
 "parentid": 23424768
-},
-{
-"name": "Guatemala",
-"woeid": 23424834,
-"placeType": {
-"name": "Country",
-"code": 12
-},
-"country": "Guatemala",
-"url": "http://where.yahooapis.com/v1/place/23424834",
-"countryCode": "GT",
-"parentid": 1
 },
 {
 "name": "Malaysia",
@@ -1620,18 +1512,6 @@ country_list = [
 "parentid": 23424977
 },
 {
-"name": "Rotterdam",
-"placeType": {
-"name": "Town",
-"code": 7
-},
-"woeid": 733075,
-"country": "Netherlands",
-"url": "http://where.yahooapis.com/v1/place/733075",
-"countryCode": "NL",
-"parentid": 23424909
-},
-{
 "name": "Lyon",
 "woeid": 609125,
 "placeType": {
@@ -1642,18 +1522,6 @@ country_list = [
 "url": "http://where.yahooapis.com/v1/place/609125",
 "countryCode": "FR",
 "parentid": 23424819
-},
-{
-"name": "Birmingham",
-"woeid": 2364559,
-"placeType": {
-"name": "Town",
-"code": 7
-},
-"country": "United States",
-"url": "http://where.yahooapis.com/v1/place/2364559",
-"countryCode": "US",
-"parentid": 23424977
 },
 {
 "name": "Boston",
@@ -1680,18 +1548,6 @@ country_list = [
 "parentid": 1
 },
 {
-"name": "Fortaleza",
-"woeid": 455830,
-"placeType": {
-"name": "Town",
-"code": 7
-},
-"country": "Brazil",
-"url": "http://where.yahooapis.com/v1/place/455830",
-"countryCode": "BR",
-"parentid": 23424768
-},
-{
 "name": "Saint Petersburg",
 "placeType": {
 "name": "Town",
@@ -1714,18 +1570,6 @@ country_list = [
 "url": "http://where.yahooapis.com/v1/place/44418",
 "countryCode": "GB",
 "parentid": 23424975
-},
-{
-"name": "Lagos",
-"placeType": {
-"name": "Town",
-"code": 7
-},
-"woeid": 1398823,
-"country": "Nigeria",
-"url": "http://where.yahooapis.com/v1/place/1398823",
-"countryCode": "NG",
-"parentid": 23424908
 },
 {
 "name": "United Arab Emirates",
@@ -1786,18 +1630,6 @@ country_list = [
 "url": "http://where.yahooapis.com/v1/place/1582504",
 "countryCode": "ZA",
 "parentid": 23424942
-},
-{
-"name": "Manaus",
-"placeType": {
-"name": "Town",
-"code": 7
-},
-"woeid": 455833,
-"country": "Brazil",
-"url": "http://where.yahooapis.com/v1/place/455833",
-"countryCode": "BR",
-"parentid": 23424768
 },
 {
 "name": "Mexico City",

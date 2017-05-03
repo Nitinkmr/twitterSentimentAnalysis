@@ -58,15 +58,11 @@ class TwitterClient(object):
         '''
         # empty list to store parsed tweets
         tweets = []
- 
+        allTexts = []
         try:
             # call twitter api to fetch tweets
             fetched_tweets = self.api.search(q = query, count = count)
-            stuff = self.api.user_timeline(screen_name = 'danieltosh', count = 100, include_rts = True)
-            for x in stuff:
-                print "stuff\n\n\n"
-                print x
-
+            
            # print self.api.statuses.user_timeline(screen_name="billybob")
 
             # parsing tweets one by one
@@ -77,6 +73,10 @@ class TwitterClient(object):
  
                 # saving text of tweet
                 parsed_tweet['text'] = tweet.text
+                if tweet.text in allTexts:
+                    continue
+                else:
+                    allTexts.append(tweet.text)
                 # saving sentiment of tweet
                 parsed_tweet['sentiment'] = self.get_tweet_sentiment(tweet.text)
                

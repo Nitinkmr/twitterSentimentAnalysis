@@ -174,7 +174,7 @@ def country_dropDown(request):
             # process the data in form.cleaned_data as required
             # ...
         
-            selected_country = form.cleaned_data['countries_drop_down']    
+            selected_country = form.cleaned_data['locations']    
             
             # get woeid for the country selected
 
